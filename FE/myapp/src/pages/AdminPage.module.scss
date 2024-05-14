@@ -1,0 +1,37 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+  
+
+  .btn1 {
+    background-color: red;
+    color: white;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .btn2 {
+    background-color: rgb(17, 0, 255);
+    color: white;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
