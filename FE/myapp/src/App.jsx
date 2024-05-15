@@ -9,12 +9,15 @@ import MainLayout from "./layout/UserLayout/MainLayout";
 import UpdatePage from "./pages/UpdatePage";
 import DetailPage from "./pages/DetailPage";
 import MainProvider from "./context/MainProvider";
+import WishListPage from "./pages/WishListPage";
+import WishListProvider from "./context/WishListProvider";
+import CoreProvider from "./context/CoreProvider";
 
 function App() {
 
   return (
     <>
-    <MainProvider>
+   <CoreProvider>
        <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
@@ -24,10 +27,11 @@ function App() {
           <Route path="basket" element={<BasketPage />} />
           <Route path="edit/:id" element={<UpdatePage />} />
           <Route path="detail/:id" element={<DetailPage />} />
+          <Route path="wishList" element={<WishListPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
-    </MainProvider>
+    </CoreProvider>
     </>
   )
 }

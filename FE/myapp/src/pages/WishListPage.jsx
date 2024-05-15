@@ -1,24 +1,21 @@
 import React, { useContext } from 'react'
-import { MainContext } from '../context/MainProvider'
 import styles from "./Home.module.scss";
+import { WishListContext } from '../context/WishListProvider';
 
 
-function BasketPage() {
-  const {basket,addBasket,decBasket,removeBasket,getTotal} =useContext(MainContext)
+function WishListPage() {
+  const {wishList,addWishList,isExitsWishList} =useContext(WishListContext)
   return (
    <>
-   <h1>Total {getTotal()} $</h1>
+  
          <div className={styles.container}>
-    {basket.map((x) => (
+    {wishList.map((x) => (
           <div key={x._id} className={styles.card}>
+            <div onClick={() => addWishList(x)}>{isExitsWishList ? <i class="fa-solid fa-heart"></i>: <i class="fa-regular fa-heart"></i>}</div>
             <img src={x.image} alt="" />
             <div className="title">{x.title}</div>
             <div className="price">{x.price} $</div>
-            <div>{x.count}</div>
            <div className={styles.btns_home}>
-           <button onClick={()=> decBasket(x)}>-</button>
-           <button onClick={()=> addBasket(x)}>+</button>
-           <button onClick={()=> removeBasket(x)}>remove</button>
            </div>
           </div>
         ))}
@@ -27,4 +24,4 @@ function BasketPage() {
   )
 }
 
-export default BasketPage
+export default WishListPage

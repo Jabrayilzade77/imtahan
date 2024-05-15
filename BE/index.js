@@ -56,7 +56,8 @@ app.post('/myapp', async(req, res) => {
   })
 
   mongoose.connect('mongodb+srv://bd813qhzt:auV2YDhd4BgCCDMz@yusif.4wzanzc.mongodb.net/')
-  .then(() => console.log('Connected!'));
+  .then(() => console.log('Connected!'))
+  .catch("jbhchdss")
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
